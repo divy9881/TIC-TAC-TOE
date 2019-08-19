@@ -11,12 +11,6 @@ def showboard(board):
 	print(board[1][0]+" | "+board[1][1]+" | "+board[1][2])
 	print(board[2][0]+" | "+board[2][1]+" | "+board[2][2])
 	print()
-
-def ProduceChar(count):
-	if count%2==1:
-		return "X"
-	else:
-		return "O"
 		
 def CheckNextWinning(board,s):
 	for i in range(3):
@@ -237,7 +231,7 @@ def PlayerOneManual():
 	s = input()
 	index = s.split(" ")
 	i,j = int(index[0]),int(index[1])
-	board[i-1][j-1] = ProduceChar(count)
+	board[i-1][j-1] = "X"
 	showboard(board)
 	if (i==1 or i==3) and (j==1 or j==3):
 		CornerMovePlay(board,count)
