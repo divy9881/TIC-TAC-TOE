@@ -203,8 +203,12 @@ def SideMovePlay(board,count):
 		elif count//2 == 2:
 			k1,k2 = CheckAdjSide(board)
 			if k1==-1 and k2==-1:
-				k1,k2 = GiveWinSidePos(board)
-				board[k1][k2] = "O"
+				k1,k2 = CheckNextWinning(board,"X")
+				if k1 == -1 and k2 == -1:
+					k1,k2 = GiveWinSidePos(board)
+					board[k1][k2] = "O"	
+				else:
+					board[k1][k2] = "O"
 			else:
 				board[k1][k2] = "O"
 		elif count//2 == 3 or count//2 == 4:
